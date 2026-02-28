@@ -1,0 +1,256 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* header style */
+.App-header {
+  padding: 20px;
+  text-align: center;
+  margin: -45px -40px 0px -45px;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+/* when the root max-width: 768px  
+and the header is in the root, the header h2 font-size will be 1.25rem
+and i want that in a smothy way, so i will add transition to the font-size with 0.3s ease 
+*/
+@media (max-width: 768px) {
+  .App-header h2 {
+    font-size: 1.25rem;
+    transition: font-size 0.3s ease;
+  }
+}
+
+/* .form {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr;
+  gap: 17px;
+  margin-bottom: 17px;
+}
+
+.form input {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #d5d4d8;
+  text-indent: 5px;
+}
+
+.form button {
+  grid-column: 1 / -1;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form input,
+.form button {
+  min-height: 40px;
+  font-family: "Karla", sans-serif;
+}
+
+.meme {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme > img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.meme span {
+  position: absolute;
+  text-align: center;
+  margin-block: 15px;
+  padding-inline: 5px;
+  font-family: impact, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+} */
+
+.form label {
+  display: block;
+  margin-top: 10px;
+  color: #213547;
+  font-size: large;
+}
+
+.form input {
+  display: block;
+  background-color: white;
+  border: 1px solid black;
+  min-width: 300px;
+  min-height: 40px;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: #000;
+}
+
+/*i want inputs in form to become Under each other when the screen width is less than 812px, 
+and in a row when the screen width is more than 812px,
+so i will use media query to change the display of the form to flex and justify-content to space-around */
+@media (max-width: 812px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+/* i wil put the span that has the tpo text's class in the top part of the img and
+the span that has the bottom text's class in the bottom part of the img,
+so i will use position absolute to put the spans in the right place,
+and i will use text-shadow to make the text more visible on the img */
+
+.meme {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.meme .top-text {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: impact, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.meme .bottom-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: impact, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+/*here style for the spans that have the bottom text and the top text in the phone screen, 
+i want the font-size to be smaller than in the desktop screen,
+ so i will use media query to change the font-size of the spans */
+@media (max-width: 812px) {
+  .meme .top-text,
+  .meme .bottom-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* i want buttan to be smaller in the phone screen and bigger in the desktop screen, 
+so i will use media query to change the min-width and min-height of the button */
+
+main button {
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  min-width: 501px;
+  min-height: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 25px 25px;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+@media (max-width: 812px) {
+  main button {
+    min-width: 300px;
+    min-height: 40px;
+    font-size: large;
+    font-weight: normal;
+  }
+}
